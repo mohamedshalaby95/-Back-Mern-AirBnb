@@ -3,11 +3,8 @@ const mongoose = require('mongoose')
 module.exports = () => {
   if (process.env.NODE_ENV === 'production') {
     mongoose
-      .connect(process.env.MLAB_DB, {
-        auth: {
-          user: process.env.MLAB_USER,
-          password: process.env.MLAB_PASSWORD,
-        },
+      .connect(process.env.PROD_DB, {
+      
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
